@@ -2,15 +2,17 @@
    "name": "ClothesAi",
    "version": "1.0.0",
    "scripts": {
-	  "start": "npm run lite",
-	  "lite": "lite-server"
+	  "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
+	  "tsc": "tsc",
+	  "tsc:w": "tsc -w",
+	  "lite": "lite-server",
+	  "typings": "typings",
+	  "postinstall": "typings install"
    },
-   "type": "git",
-   "url": "git@github.com:clothesai/clothesai.github.io.git",
-   "description": " Fast, minimalist clothes search, price comparison & stylization engines.",j
    "license": "GPL-3.0",
    "dependencies": {
 	  "angular2": "2.0.0-beta.11",
+	  "systemjs": "0.19.24",
 	  "es6-promise": "^3.0.2",
 	  "es6-shim": "^0.35.0",
 	  "reflect-metadata": "0.1.2",
@@ -19,6 +21,8 @@
    },
    "devDependencies": {
 	  "concurrently": "^2.0.0",
-	  "lite-server": "^2.1.0"
+	  "lite-server": "^2.1.0",
+	  "typescript": "^1.8.9",
+	  "typings":"^0.7.9"
    }
 }
