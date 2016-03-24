@@ -1,12 +1,14 @@
-/**
- * @author Rizart Dokollari <r.dokollari@gmail.com>
- * @since 23/03/16
- */
 import {Component} from 'angular2/core';
 import {Http} from "angular2/http";
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import {Cloth} from "./cloth";
 import {ClothDetailComponent} from "./cloth-detail.component";
+import {ClothService} from "./cloth.service";
+
+/**
+ * @author Rizart Dokollari <r.dokollari@gmail.com>
+ * @since 23/03/16
+ */
 
 @Component({
     selector: 'my-app',
@@ -72,34 +74,27 @@ import {ClothDetailComponent} from "./cloth-detail.component";
       border-radius: 4px 0 0 4px;
     }
   `],
-    directives: [ClothDetailComponent]
+    directives: [ClothDetailComponent],
+    providers: [ClothService]
 })
 export class AppComponent {
     public title = 'ClothesAi';
-    clothes = CLOTHES;
+    clothes:Cloth[];
     selectedCloth:Cloth;
 
-    //constructor(http:Http) {
-    //    http.get('http://api.clothesai.app/v1/clothes')
-    //        .map(res => res.json())
-    //        .subscribe(clothes => this.clothes = clothes);
-    //}
+    constructor(private _clothService:ClothService) {
+    }
+
+    getClothes() {
+        this._clothService.getClothes().then(clothes => this.clothes = clothes);
+    }
+
+    ngOnInit() {
+        this.getClothes();
+    }
 
     onSelect(cloth:Cloth) {
         this.selectedCloth = cloth;
     }
 }
 //console.log('clothes: ' + this.clothes);
-
-var CLOTHES:Cloth[] = [
-    {"slug": "11", "name": "Mr. Nice", "description": "description1"},
-    {"slug": "12", "name": "Narco", "description": "description2"},
-    {"slug": "13", "name": "Bombasto", "description": "description3"},
-    {"slug": "14", "name": "Celeritas", "description": "description4"},
-    {"slug": "15", "name": "Magneta", "description": "description5"},
-    {"slug": "16", "name": "RubberMan", "description": "description6"},
-    {"slug": "17", "name": "Dynama", "description": "description7"},
-    {"slug": "18", "name": "Dr IQ", "description": "description8"},
-    {"slug": "19", "name": "Magma", "description": "description19"},
-    {"slug": "20", "name": "Tornado", "description": "description10"},
-];
