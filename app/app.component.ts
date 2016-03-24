@@ -5,13 +5,8 @@
 import {Component} from 'angular2/core';
 import {Http} from "angular2/http";
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
-import 'rxjs/add/operator/map';
-
-interface Cloth {
-    name: string;
-    slug: string;
-    description: string;
-}
+import {Cloth} from "./cloth";
+import {ClothDetailComponent} from "./cloth-detail.component";
 
 @Component({
     selector: 'my-app',
@@ -26,14 +21,7 @@ interface Cloth {
                 <span class="badge">{{cloth.slug}}</span> {{cloth.name}}
             </li>
         </ul>
-        <div *ngIf="selectedCloth">
-            <h2>{{selectedCloth.name}} details</h2>
-            <div><label>slug: </label>{{selectedCloth.slug}}</div>
-            <div>
-                <label>name: </label>
-                <input [(ngModel)]="selectedCloth.name" placeholder="name"/>
-            </div>
-        </div>
+        <cloth-detail [cloth]="selectedCloth"></cloth-detail>
     `,
     styles: [`
  .selected {
@@ -83,7 +71,8 @@ interface Cloth {
       margin-right: .8em;
       border-radius: 4px 0 0 4px;
     }
-  `]
+  `],
+    directives: [ClothDetailComponent]
 })
 export class AppComponent {
     public title = 'ClothesAi';
