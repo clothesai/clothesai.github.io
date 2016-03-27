@@ -7,4 +7,3 @@ export interface Cloth {
     slug: string;
     description: string;
 }
-

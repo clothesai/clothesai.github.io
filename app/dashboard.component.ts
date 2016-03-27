@@ -15,7 +15,7 @@ import {ClothService} from "./cloth.service";
 export class DashboardComponent implements OnInit {
     clothes:Cloth[] = [];
 
-    constructor(private _clothService:ClothService) {
+    constructor(private _clothService:ClothService, private _router:Router) {
     }
 
     ngOnInit() {
@@ -23,6 +23,8 @@ export class DashboardComponent implements OnInit {
             .then(clothes => this.clothes = clothes.slice(1, 5))
     }
 
-    goToDetail() {
+    goToDetail(cloth:Cloth) {
+        let link = ['ClothesIndex', {slug: cloth.slug}];
+        this._router.navigate(link);
     }
 }

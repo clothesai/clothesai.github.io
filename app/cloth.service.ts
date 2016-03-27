@@ -18,4 +18,10 @@ export class ClothService {
         return new Promise<Cloth[]>(resolve =>
             setTimeout(() => resolve(CLOTHES), 1300));
     }
+
+    getCloth(slug:string) {
+        return Promise.resolve(CLOTHES).then(clothes => clothes.filter(
+            cloth => cloth.slug === slug)[0]
+        );
+    }
 }

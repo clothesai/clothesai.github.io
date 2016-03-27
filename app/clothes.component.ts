@@ -7,7 +7,8 @@ import {OnInit} from "angular2/core";
 
 @Component({
     selector: 'clothes-selector',
-    template: 'clothes index'
+    template: `
+    `
 })
 
 export class ClothesComponent implements OnInit {

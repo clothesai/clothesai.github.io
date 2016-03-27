@@ -1,10 +1,9 @@
 import {Component} from 'angular2/core';
-import {Http} from "angular2/http";
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router";
 import {Cloth} from "./cloth";
 import {ClothDetailComponent} from "./cloth-detail.component";
 import {ClothService} from "./cloth.service";
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router";
 import {DashboardComponent} from "./dashboard.component";
 import {ClothesComponent} from "./clothes.component";
 
@@ -39,6 +38,11 @@ import {ClothesComponent} from "./clothes.component";
         name: 'Dashboard',
         component: DashboardComponent,
         useAsDefault: true
+    },
+    {
+        path: '/details/:slug',
+        name: 'ClothesDetails',
+        component: ClothDetailComponent
     }
 ])
 export class AppComponent {

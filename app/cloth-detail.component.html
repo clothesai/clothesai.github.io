@@ -1,0 +1,11 @@
+<div *ngIf="cloth">
+    <h2>{{cloth.name}} details!</h2>
+    <div>
+        <label>slug: </label>{{cloth.slug}}
+    </div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="cloth.name" placeholder="name"/>
+    </div>
+    <button (click)="goBack()">Back</button>
+</div>

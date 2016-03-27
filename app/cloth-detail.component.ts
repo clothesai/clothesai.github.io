@@ -2,23 +2,29 @@
  * @author Rizart Dokollari <r.dokollari@gmail.com>
  * @since 24/03/16
  */
-import {Component} from 'angular2/core';
+import {Component, Input, OnInit} from "angular2/core";
+import {RouteParams} from "angular2/router";
 import {Cloth} from './cloth';
+import {ClothService} from "./cloth.service";
 
 @Component({
-    selector: 'cloth-detail',
-    template: `
-        <div *ngIf="cloth">
-            <h2>{{cloth.name}} details</h2>
-            <div><label>slug: </label>{{cloth.slug}}</div>
-            <div>
-                <label>name: </label>
-                <input [(ngModel)]="cloth.name" placeholder="name"/>
-            </div>
-        </div>
-  `,
-    inputs: ['cloth']
+    selector: 'cloth-detail-selector',
+    template: 'app/cloth-detail.component.html',
 })
-export class ClothDetailComponent {
-    cloth:Cloth;
+export class ClothDetailComponent implements OnInit {
+    @Input() cloth:Cloth;
+
+    constructor(private _clothService:ClothService, private _routeParams:RouteParams) {
+    }
+
+    ngOnInit() {
+        let slug = this._routeParams.get('slug');
+
+        this._clothService.getCloth(slug)
+            .then(cloth => this.cloth = cloth);
+    }
+
+    goBack() {
+        window.history.back();
+    }
 }
