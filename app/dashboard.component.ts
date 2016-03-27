@@ -9,15 +9,20 @@ import {ClothService} from "./cloth.service";
  */
 
 @Component({
-    selector: 'dashboard',
-    templateUrl: 'app/dashboard.component.html',
-    styleUrls: ['app/dashboard.component.css']
+    selector: 'dashboard-selector',
+    templateUrl: 'app/dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
-    clothes:Cloth[];
+    clothes:Cloth[] = [];
 
-    constructor(private _router:Router, private _clothService:ClothService) {
+    constructor(private _clothService:ClothService) {
     }
 
-)
+    ngOnInit() {
+        this._clothService.getClothes()
+            .then(clothes => this.clothes = clothes.slice(1, 5))
+    }
+
+    goToDetail() {
+    }
 }
