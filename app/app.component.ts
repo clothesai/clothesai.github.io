@@ -13,7 +13,6 @@ import {ClothesComponent} from "./clothes.component";
  */
 @Component({
     selector: 'app-selector',
-    styleUrls: ['app/app.component.css'],
     template: `
         <h1>{{title}}</h1>
         <nav>
@@ -22,6 +21,7 @@ import {ClothesComponent} from "./clothes.component";
         </nav>
         <router-outlet></router-outlet>
     `,
+    styleUrls: ['app/app.component.css'],
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
@@ -29,11 +29,6 @@ import {ClothesComponent} from "./clothes.component";
     ]
 })
 @RouteConfig([
-    {
-        path: '/clothes',
-        name: 'ClothesIndex',
-        component: ClothesComponent,
-    },
     {
         path: '/dashboard',
         name: 'Dashboard',
@@ -44,6 +39,11 @@ import {ClothesComponent} from "./clothes.component";
         path: '/details/:slug',
         name: 'ClothDetail',
         component: ClothDetailComponent
+    },
+    {
+        path: '/clothes',
+        name: 'ClothesIndex',
+        component: ClothesComponent,
     }
 ])
 export class AppComponent {

@@ -17,6 +17,7 @@ import {ClothService} from "./cloth.service";
 })
 
 export class ClothesComponent implements OnInit {
+
     clothes:Cloth[];
     selectedCloth:Cloth;
 

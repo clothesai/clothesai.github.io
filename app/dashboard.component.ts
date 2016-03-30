@@ -1,7 +1,7 @@
-import {Component} from "angular2/core";
-import {OnInit} from "angular2/core";
-import {Cloth} from "./cloth";
+import {Component, OnInit} from "angular2/core";
 import {Router} from "angular2/router";
+
+import {Cloth} from "./cloth";
 import {ClothService} from "./cloth.service";
 /**
  * @author Rizart Dokollari <r.dokollari@gmail.com>
@@ -11,9 +11,10 @@ import {ClothService} from "./cloth.service";
 @Component({
     selector: 'dashboard-selector',
     templateUrl: 'app/dashboard.component.html',
-    styleUrls: ['app/dashboard.component']
+    styleUrls: ['app/dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
     clothes:Cloth[] = [];
 
     constructor(private _clothService:ClothService, private _router:Router) {
