@@ -10,6 +10,7 @@ import {ClothService} from "./cloth.service";
 @Component({
     selector: 'cloth-detail-selector',
     template: 'app/cloth-detail.component.html',
+    styleUrls: ['app/cloth-details.component.css'],
 })
 export class ClothDetailComponent implements OnInit {
     @Input() cloth:Cloth;

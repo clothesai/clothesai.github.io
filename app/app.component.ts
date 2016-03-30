@@ -13,6 +13,7 @@ import {ClothesComponent} from "./clothes.component";
  */
 @Component({
     selector: 'app-selector',
+    styleUrls: ['app/app.component.css'],
     template: `
         <h1>{{title}}</h1>
         <nav>
@@ -41,7 +42,7 @@ import {ClothesComponent} from "./clothes.component";
     },
     {
         path: '/details/:slug',
-        name: 'ClothesDetails',
+        name: 'ClothDetail',
         component: ClothDetailComponent
     }
 ])

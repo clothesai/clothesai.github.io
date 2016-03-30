@@ -10,7 +10,8 @@ import {ClothService} from "./cloth.service";
 
 @Component({
     selector: 'dashboard-selector',
-    templateUrl: 'app/dashboard.component.html'
+    templateUrl: 'app/dashboard.component.html',
+    styleUrls: ['app/dashboard.component']
 })
 export class DashboardComponent implements OnInit {
     clothes:Cloth[] = [];
@@ -24,7 +25,7 @@ export class DashboardComponent implements OnInit {
     }
 
     goToDetail(cloth:Cloth) {
-        let link = ['ClothesIndex', {slug: cloth.slug}];
+        let link = ['ClothDetail', {slug: cloth.slug}];
         this._router.navigate(link);
     }
 }
