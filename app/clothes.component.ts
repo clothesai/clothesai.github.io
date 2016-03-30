@@ -2,11 +2,11 @@
  * @author Rizart Dokollari <r.dokollari@gmail.com>
  * @since 26/03/16
  */
-import {Component} from "angular2/core";
-import {OnInit} from "angular2/core";
-import {ClothDetailComponent} from "./cloth-detail.component";
-import {Cloth} from "./cloth";
+import {Component, OnInit} from "angular2/core";
 import {Router} from "angular2/router";
+
+import {Cloth} from "./cloth";
+import {ClothDetailComponent} from "./cloth-detail.component";
 import {ClothService} from "./cloth.service";
 
 @Component({

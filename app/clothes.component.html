@@ -1,7 +1,6 @@
-<h1>{{title}}</h1>
 <h2>Clothes</h2>
 <ul class="clothes">
-    <li *ngFor="#cloth as clothes"
+    <li *ngFor="#cloth of clothes"
         [class.selected]="cloth === selectedCloth"
         (click)="onSelect(cloth)">
         <span class="badge">{{cloth.slug}}</span> {{cloth.name}}
