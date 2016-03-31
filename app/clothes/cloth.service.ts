@@ -3,8 +3,9 @@
  * @since 24/03/16
  */
 import {Injectable} from "angular2/core";
+
 import {Cloth} from "./cloth";
-import {CLOTHES} from './mock-clothes'
+import {CLOTHES} from './../mock-clothes'
 
 @Injectable()
 export class ClothService {

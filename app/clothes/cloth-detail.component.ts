@@ -2,15 +2,16 @@
  * @author Rizart Dokollari <r.dokollari@gmail.com>
  * @since 24/03/16
  */
-import {Component, Input, OnInit} from "angular2/core";
+import {Component, OnInit, Input} from "angular2/core";
 import {RouteParams} from "angular2/router";
+
 import {Cloth} from './cloth';
-import {ClothService} from "./cloth.service";
+import {ClothService} from "./cloth.service.ts";
 
 @Component({
     selector: 'cloth-detail-selector',
-    templateUrl: 'app/cloth-detail.component.html',
-    styleUrls: ['app/cloth-detail.component.css'],
+    templateUrl: 'app/clothes/cloth-detail.component.html',
+    styleUrls: ['app/clothes/cloth-detail.component.css'],
 })
 export class ClothDetailComponent implements OnInit {
     @Input() cloth:Cloth;

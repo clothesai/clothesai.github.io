@@ -1,11 +1,11 @@
 import {Component} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router";
-import {Cloth} from "./cloth";
-import {ClothDetailComponent} from "./cloth-detail.component";
-import {ClothService} from "./cloth.service";
-import {DashboardComponent} from "./dashboard.component";
-import {ClothesComponent} from "./clothes.component";
+import {Cloth} from "./clothes/cloth";
+import {ClothDetailComponent} from "./clothes/cloth-detail.component.ts";
+import {ClothService} from "./clothes/cloth.service.ts";
+import {DashboardComponent} from "./dashboard/dashboard.component.ts";
+import {ClothesComponent} from "./clothes/clothes.component.ts";
 
 /**
  * @author Rizart Dokollari <r.dokollari@gmail.com>

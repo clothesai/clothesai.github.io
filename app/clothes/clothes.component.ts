@@ -6,16 +6,15 @@ import {Component, OnInit} from "angular2/core";
 import {Router} from "angular2/router";
 
 import {Cloth} from "./cloth";
-import {ClothDetailComponent} from "./cloth-detail.component";
-import {ClothService} from "./cloth.service";
+import {ClothDetailComponent} from "./cloth-detail.component.ts";
+import {ClothService} from "./cloth.service.ts";
 
 @Component({
     selector: 'clothes-selector',
-    templateUrl: 'app/clothes.component.html',
-    styleUrls: ['app/clothes.component.css'],
-    directives: [ClothDetailComponent]
+    templateUrl: 'app/clothes/clothes.component.html',
+    styleUrls: ['app/clothes/clothes.component.css'],
+    directives: [ClothDetailComponent],
 })
-
 export class ClothesComponent implements OnInit {
 
     clothes:Cloth[];

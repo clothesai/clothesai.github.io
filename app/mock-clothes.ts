@@ -1,4 +1,4 @@
-import {Cloth} from "./cloth";
+import {Cloth} from "./clothes/cloth";
 
 /**
  * @author Rizart Dokollari <r.dokollari@gmail.com>

@@ -1,8 +1,8 @@
 import {Component, OnInit} from "angular2/core";
 import {Router} from "angular2/router";
 
-import {Cloth} from "./cloth";
-import {ClothService} from "./cloth.service";
+import {Cloth} from "./../clothes/cloth";
+import {ClothService} from "./../clothes/cloth.service.ts";
 /**
  * @author Rizart Dokollari <r.dokollari@gmail.com>
  * @since 24/03/16
@@ -10,8 +10,8 @@ import {ClothService} from "./cloth.service";
 
 @Component({
     selector: 'dashboard-selector',
-    templateUrl: 'app/dashboard.component.html',
-    styleUrls: ['app/dashboard.component.css']
+    templateUrl: 'app/dashboard/dashboard.component.html',
+    styleUrls: ['app/dashboard/dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
 
