@@ -10,7 +10,13 @@ System.register([], function(exports_1, context_1) {
              * @since 24/03/16
              */
             Cloth = (function () {
-                function Cloth() {
+                function Cloth(slug, name, description) {
+                    this.slug = slug;
+                    this.name = name;
+                    this.description = description;
+                    this.slug = slug;
+                    this.name = name;
+                    this.description = description || '';
                 }
                 return Cloth;
             }());
