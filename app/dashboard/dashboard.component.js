@@ -24,10 +24,6 @@ System.register(["angular2/core", "angular2/router", "./../clothes/cloth.service
                 cloth_service_ts_1 = cloth_service_ts_1_1;
             }],
         execute: function() {
-            /**
-             * @author Rizart Dokollari <r.dokollari@gmail.com>
-             * @since 24/03/16
-             */
             DashboardComponent = (function () {
                 function DashboardComponent(_clothService, _router) {
                     this._clothService = _clothService;
@@ -49,7 +45,7 @@ System.register(["angular2/core", "angular2/router", "./../clothes/cloth.service
                         templateUrl: 'app/dashboard/dashboard.component.html',
                         styleUrls: ['app/dashboard/dashboard.component.css']
                     }), 
-                    __metadata('design:paramtypes', [cloth_service_ts_1.ClothService, router_1.Router])
+                    __metadata('design:paramtypes', [cloth_service_ts_1.ClothLocalService, router_1.Router])
                 ], DashboardComponent);
                 return DashboardComponent;
             }());

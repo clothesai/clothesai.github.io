@@ -51,7 +51,7 @@ System.register(["angular2/core", "angular2/router", './cloth', "./cloth.service
                         templateUrl: 'app/clothes/cloth-detail.component.html',
                         styleUrls: ['app/clothes/cloth-detail.component.css'],
                     }), 
-                    __metadata('design:paramtypes', [cloth_service_ts_1.ClothService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [cloth_service_ts_1.ClothLocalService, router_1.RouteParams])
                 ], ClothDetailComponent);
                 return ClothDetailComponent;
             }());

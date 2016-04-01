@@ -11,7 +11,7 @@ System.register(["angular2/core", './../mock-clothes'], function(exports_1, cont
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, mock_clothes_1;
-    var ClothService;
+    var ClothLocalService;
     return {
         setters:[
             function (core_1_1) {
@@ -21,28 +21,30 @@ System.register(["angular2/core", './../mock-clothes'], function(exports_1, cont
                 mock_clothes_1 = mock_clothes_1_1;
             }],
         execute: function() {
-            ClothService = (function () {
-                function ClothService() {
+            ClothLocalService = (function () {
+                function ClothLocalService() {
                     this.apiUrl = 'http://api.clothesai.app/v1/clothes';
                 }
-                ClothService.prototype.getClothes = function () {
+                ClothLocalService.prototype.getClothes = function () {
                     return Promise.resolve(mock_clothes_1.CLOTHES);
                 };
-                ClothService.prototype.getClothesSlowly = function () {
+                ClothLocalService.prototype.getClothesSlowly = function () {
                     return new Promise(function (resolve) {
                         return setTimeout(function () { return resolve(mock_clothes_1.CLOTHES); }, 1300);
                     });
                 };
-                ClothService.prototype.getCloth = function (slug) {
+                ClothLocalService.prototype.getCloth = function (slug) {
                     return Promise.resolve(mock_clothes_1.CLOTHES).then(function (clothes) { return clothes.filter(function (cloth) { return cloth.slug === slug; })[0]; });
                 };
-                ClothService = __decorate([
+                ClothLocalService.prototype.addCloth = function (name) {
+                };
+                ClothLocalService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
-                ], ClothService);
-                return ClothService;
+                ], ClothLocalService);
+                return ClothLocalService;
             }());
-            exports_1("ClothService", ClothService);
+            exports_1("ClothLocalService", ClothLocalService);
         }
     }
 });

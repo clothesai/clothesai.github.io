@@ -53,7 +53,7 @@ System.register(["angular2/core", "angular2/router", "./cloth-detail.component.t
                         styleUrls: ['app/clothes/clothes.component.css'],
                         directives: [cloth_detail_component_ts_1.ClothDetailComponent],
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, cloth_service_ts_1.ClothService])
+                    __metadata('design:paramtypes', [router_1.Router, cloth_service_ts_1.ClothLocalService])
                 ], ClothesComponent);
                 return ClothesComponent;
             }());

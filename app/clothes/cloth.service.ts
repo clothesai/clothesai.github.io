@@ -8,7 +8,7 @@ import {Cloth} from "./cloth";
 import {CLOTHES} from './../mock-clothes'
 
 @Injectable()
-export class ClothService {
+export class ClothLocalService {
     apiUrl = 'http://api.clothesai.app/v1/clothes';
 
     getClothes() {
@@ -24,5 +24,9 @@ export class ClothService {
         return Promise.resolve(CLOTHES).then(clothes => clothes.filter(
             cloth => cloth.slug === slug)[0]
         );
+    }
+
+    addCloth(name:String):any {
+
     }
 }

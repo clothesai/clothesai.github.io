@@ -6,7 +6,7 @@ import {Component, OnInit, Input} from "angular2/core";
 import {RouteParams} from "angular2/router";
 
 import {Cloth} from './cloth';
-import {ClothService} from "./cloth.service.ts";
+import {ClothLocalService} from "./cloth.service.ts";
 
 @Component({
     selector: 'cloth-detail-selector',
@@ -16,7 +16,7 @@ import {ClothService} from "./cloth.service.ts";
 export class ClothDetailComponent implements OnInit {
     @Input() cloth:Cloth;
 
-    constructor(private _clothService:ClothService, private _routeParams:RouteParams) {
+    constructor(private _clothService:ClothLocalService, private _routeParams:RouteParams) {
     }
 
     ngOnInit() {

@@ -27,15 +27,17 @@
         });
 
         // #3. Import the spec file explicitly
-        System.import('app/clothes/cloth.spec');
-        System.import('app/init-caps-pipe.spec');
+        Promise.all([
+                    System.import('app/clothes/cloth.spec'),
+                    System.import('app/init-caps-pipe.spec')
+                ])
 
-        // #4. wait for all imports to load ...
-        //     then re-execute `window.onload` which
-        //     triggers the Jasmine test-runner start
-        //     or explain what went wrong. causes truplicateion -.-
-        //                .then(window.onload)
-        //                .catch(console.error.bind(console));
+                // #4. wait for all imports to load ...
+                //     then re-execute `window.onload` which
+                //     triggers the Jasmine test-runner start
+                //     or explain what went wrong. causes truplicateion -.-
+//                .then(window.onload)
+                .catch(console.error.bind(console));
     </script>
 </head>
 <body>

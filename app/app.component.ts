@@ -1,11 +1,15 @@
 import {Component} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router";
+
 import {Cloth} from "./clothes/cloth";
 import {ClothDetailComponent} from "./clothes/cloth-detail.component.ts";
-import {ClothService} from "./clothes/cloth.service.ts";
+import {ClothLocalService} from "./clothes/cloth.service.ts";
 import {DashboardComponent} from "./dashboard/dashboard.component.ts";
 import {ClothesComponent} from "./clothes/clothes.component.ts";
+import {ClothListComponent} from "./toc/cloth-list.component";
+import {ClothService} from "./toc/cloth.service";
+import {TocComponent} from "./toc.component";
 
 /**
  * @author Rizart Dokollari <r.dokollari@gmail.com>
@@ -18,6 +22,7 @@ import {ClothesComponent} from "./clothes/clothes.component.ts";
         <nav>
             <a [routerLink]="['ClothesIndex']">Clothes</a>
             <a [routerLink]="['Dashboard']">Dashboard</a>
+            <a [routerLink]="['ClothTour']">Tour of Clothes</a>
         </nav>
         <router-outlet></router-outlet>
     `,
@@ -25,7 +30,7 @@ import {ClothesComponent} from "./clothes/clothes.component.ts";
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
-        ClothService
+        ClothLocalService, ClothService
     ]
 })
 @RouteConfig([
@@ -44,6 +49,11 @@ import {ClothesComponent} from "./clothes/clothes.component.ts";
         path: '/clothes',
         name: 'ClothesIndex',
         component: ClothesComponent,
+    },
+    {
+        path: '/clothes/tour',
+        name: 'ClothTour',
+        component: TocComponent,
     }
 ])
 export class AppComponent {

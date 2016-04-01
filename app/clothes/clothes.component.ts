@@ -7,7 +7,7 @@ import {Router} from "angular2/router";
 
 import {Cloth} from "./cloth";
 import {ClothDetailComponent} from "./cloth-detail.component.ts";
-import {ClothService} from "./cloth.service.ts";
+import {ClothLocalService} from "./cloth.service.ts";
 
 @Component({
     selector: 'clothes-selector',
@@ -20,7 +20,7 @@ export class ClothesComponent implements OnInit {
     clothes:Cloth[];
     selectedCloth:Cloth;
 
-    constructor(private _router:Router, private _clothService:ClothService) {
+    constructor(private _router:Router, private _clothService:ClothLocalService) {
     }
 
     getClothes() {
