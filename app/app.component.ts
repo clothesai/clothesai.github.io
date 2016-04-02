@@ -35,7 +35,7 @@ import {TocComponent} from "./toc.component";
 })
 @RouteConfig([
     {
-        path: '/dashboard',
+        path: '/',
         name: 'Dashboard',
         component: DashboardComponent,
         useAsDefault: true

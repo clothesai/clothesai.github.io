@@ -38,6 +38,9 @@ System.register(["angular2/core", "angular2/http", "rxjs/Subject", "./search.ser
                         .switchMap(function (term) { return _this._searchService.search(term); });
                 }
                 SearchComponent.prototype.search = function (term) {
+                    if (!term.replace(/\s/g, '').length) {
+                        return;
+                    }
                     this._searchTermStream.next(term);
                 };
                 SearchComponent = __decorate([

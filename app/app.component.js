@@ -60,7 +60,7 @@ System.register(['angular2/core', "angular2/router", "./clothes/cloth-detail.com
                     }),
                     router_1.RouteConfig([
                         {
-                            path: '/dashboard',
+                            path: '/',
                             name: 'Dashboard',
                             component: dashboard_component_ts_1.DashboardComponent,
                             useAsDefault: true

@@ -35,6 +35,10 @@ export class SearchComponent {
     private _searchTermStream = new Subject<string>();
 
     search(term:string) {
+        if (!term.replace(/\s/g, '').length) {
+            return;
+        }
+
         this._searchTermStream.next(term);
     }
 
