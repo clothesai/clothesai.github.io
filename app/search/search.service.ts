@@ -16,7 +16,7 @@ export class SearchService {
     }
 
     search(term:string) {
-        let clothesSearchUrl = 'http://api.clothesai.app/v1/clothes/search/' + term;
+        let clothesSearchUrl = 'http://api-clothesai.herokuapp.com/v1/clothes/search/' + term;
 
         return this.http.get(clothesSearchUrl)
             .map(res => <Cloth[]> res.json().data)

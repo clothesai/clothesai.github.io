@@ -29,7 +29,7 @@ System.register(["angular2/core", "angular2/http", "rxjs/Observable"], function(
                     this.http = http;
                 }
                 SearchService.prototype.search = function (term) {
-                    var clothesSearchUrl = 'http://api.clothesai.app/v1/clothes/search/' + term;
+                    var clothesSearchUrl = 'http://api-clothesai.herokuapp.com/v1/clothes/search/' + term;
                     return this.http.get(clothesSearchUrl)
                         .map(function (res) { return res.json().data; })
                         .do(function (data) { return console.log(data); })
